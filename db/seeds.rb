@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Story.delete_all
+
+Story.create( content: "Pizza is yummy!"                    )
+Story.create( content: "Veggies are tasty and nutritious."  )
+Story.create( content: "Salt is the best ingredient."       )
