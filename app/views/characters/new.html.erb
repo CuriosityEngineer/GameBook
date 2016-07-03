@@ -7,6 +7,16 @@ Button to save everything.</p>
 <p><%=link_to "Dashboard", root_path %></p>
 
 <%= form_for :characters, url: characters_path do |f| %>
+  <% if @character.errors.any? %>
+    <div id="errors">
+      <h2><%=pluralize(@character.errors.count, "error") %> prevented this post from saving</h2>
+      <ul>
+        <% @character.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>

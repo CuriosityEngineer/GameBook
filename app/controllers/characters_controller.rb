@@ -7,13 +7,16 @@ class CharactersController < ApplicationController
   end
 
   def new
+    @character = Character.new
   end
 
   def create
     @character = Character.new(character_params)
-    @character.save
-
-    redirect_to @character
+    if @character.save
+      redirect_to @character
+    else
+      render 'new'
+    end
   end
 
   def show
