@@ -3,6 +3,7 @@ class CharactersController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :new]
 
   def index
+    @characters = Character.all
   end
 
   def new
