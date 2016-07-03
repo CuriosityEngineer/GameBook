@@ -5,3 +5,4 @@
 <p><%=link_to "Dashboard", root_path %></p>
 <p><%=link_to "Create New", new_character_path %></p>
 <p><%=link_to "Edit", edit_character_path(@character) %></p>
+<p><%=link_to "Delete", character_path(@character), method: :delete, data: {confirm: 'Are you sure?'} %></p>
