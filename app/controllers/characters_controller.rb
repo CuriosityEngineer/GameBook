@@ -23,6 +23,20 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
   end
 
+  def edit
+    @character = Character.find(params[:id])
+  end
+
+  def update
+    @character = Character.find(params[:id])
+
+    if @character.update(params[:character].permit(:name))
+      redirect_to @character
+    else
+      render 'edit'
+    end
+  end
+
   private
     def character_params
       params.require(:characters).permit(:name)
