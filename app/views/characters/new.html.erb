@@ -3,3 +3,30 @@
 <p>This page needs a form so players can create a character.<br>
 Set the form as default awnsers so player doesn have to create from scratch.<br>
 Button to save everything.</p>
+
+<%= form_for :characters, url: characters_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    Skill bonus<br>
+    <ul>
+      <li>+1 Fighting</li>
+      <li>+1 Trickery</li>
+      <li>+1 Action</li>
+      <li>+1 Talking</li>
+      <li>+1 Perception</li>
+      <li>+1 Inner Strength</li>
+    </ul>
+    Equipment & Treasures
+    <ul>
+      <li>4 pennies & 1 shilling</li>
+      <li>Whishbone</li>
+      <li>Marble</li>
+    </ul>
+  <p>
+    <%= f.submit "Save" %>
+  </p>
+<% end %>
