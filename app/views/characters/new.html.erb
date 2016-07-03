@@ -4,11 +4,15 @@
 Set the form as default awnsers so player doesn have to create from scratch.<br>
 Button to save everything.</p>
 
+<p><%=link_to "Dashboard", root_path %></p>
+
 <%= form_for :characters, url: characters_path do |f| %>
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
+
+  <p>Avatar >> Empty for now</p>
 
   <p>
     Skill bonus<br>
